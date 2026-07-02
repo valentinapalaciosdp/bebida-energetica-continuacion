@@ -305,7 +305,9 @@ iframe, embed, object { max-width: 100% !important; }
 /* Contenedores custom a bloque (Elementor deja display:inline sin --display) */
 .wpr-single-post,.wpr-blog-archive,.wpr-single-post .e-con-inner,.wpr-blog-archive .e-con-inner{display:block !important;}
 .wpr-single-post,.wpr-blog-archive{width:100% !important;}
-.wpr-grid{display:grid !important;}
+/* Royal Addons oculta .wpr-grid (opacity:0) hasta que su JS lo revela; en el export estatico no corre -> forzar visible */
+.wpr-grid{display:grid !important;opacity:1 !important;}
+.wpr-grid .wpr-grid-item{opacity:1 !important;}
 .wpr-grid-item img,.woocommerce ul.products li.product img{height:230px !important;object-fit:cover !important;}
 /* Menu del header: fila flex, una sola linea centrada, no se parte (desktop) */
 @media(min-width:1025px){

@@ -305,7 +305,9 @@ iframe, embed, object { max-width: 100% !important; }
 /* Contenedores custom a bloque (Elementor deja display:inline sin --display) */
 .wpr-single-post,.wpr-blog-archive,.wpr-single-post .e-con-inner,.wpr-blog-archive .e-con-inner{display:block !important;}
 .wpr-single-post,.wpr-blog-archive{width:100% !important;}
-.wpr-grid{display:grid !important;}
+/* Royal Addons oculta .wpr-grid (opacity:0) hasta que su JS lo revela; en el export estatico no corre -> forzar visible */
+.wpr-grid{display:grid !important;opacity:1 !important;}
+.wpr-grid .wpr-grid-item{opacity:1 !important;}
 .wpr-grid-item img,.woocommerce ul.products li.product img{height:230px !important;object-fit:cover !important;}
 /* Menu del header: fila flex, una sola linea centrada, no se parte (desktop) */
 @media(min-width:1025px){
@@ -352,7 +354,6 @@ iframe, embed, object { max-width: 100% !important; }
 <p class="wp-block-paragraph">El verano pide algo distinto: frescura, color y una energía que acompañe el ritmo de los días largos. Así nació <strong>VOLT Tropical Surge</strong>, una variante que combina la potencia clásica de VOLT con un perfil de sabor vibrante inspirado en la fruta tropical.</p>
 <h2 class="wp-block-heading">Un perfil de sabor pensado para activar</h2>
 <p class="wp-block-paragraph">Notas de maracuyá y mango se mezclan con un toque cítrico que refresca en cada sorbo. El resultado es una bebida intensa pero equilibrada, ideal para quienes buscan energía sin renunciar al sabor.</p>
-<figure class="wp-block-image size-large"><img decoding="async" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/apoyo-tropical-surge.png" alt="VOLT Tropical Surge" /></figure>
 <h2 class="wp-block-heading">¿Cuándo disfrutarla?</h2>
 <ul class="wp-block-list"><li>Antes de una jornada activa al aire libre.</li><li>Como acompañante refrescante en la tarde.</li><li>Bien fría, para potenciar todas sus notas.</li></ul>
 <p class="wp-block-paragraph">Tropical Surge representa la actitud VOLT llevada al verano: intensidad, movimiento y un sabor que no pasa desapercibido. <strong>Siente la energía de los trópicos.</strong></p>

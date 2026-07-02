@@ -275,12 +275,13 @@ iframe, embed, object { max-width: 100% !important; }
 		</style>
 <link rel="stylesheet" id="woocommerce-general-css" href="/bebida-energetica-continuacion/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=9.4.0" media="all" />
 <style id="wpr-page-css"></style>
-<style id="wpr-card-fix">.wpr-grid-item img,.woocommerce ul.products li.product img{height:230px!important;object-fit:cover!important;}</style>
 <style id="wpr-continuacion-fix">
 /* Contenedores custom a bloque (Elementor deja display:inline sin --display) */
 .wpr-single-post,.wpr-blog-archive,.wpr-single-post .e-con-inner,.wpr-blog-archive .e-con-inner{display:block !important;}
 .wpr-single-post,.wpr-blog-archive{width:100% !important;}
-.wpr-grid{display:grid !important;}
+/* Royal Addons oculta .wpr-grid (opacity:0) hasta que su JS lo revela; en el export estatico no corre -> forzar visible */
+.wpr-grid{display:grid !important;opacity:1 !important;}
+.wpr-grid .wpr-grid-item{opacity:1 !important;}
 .wpr-grid-item img,.woocommerce ul.products li.product img{height:230px !important;object-fit:cover !important;}
 /* Menu del header: fila flex, una sola linea centrada, no se parte (desktop) */
 @media(min-width:1025px){
@@ -292,6 +293,7 @@ iframe, embed, object { max-width: 100% !important; }
 .e-con.e-grid:has(.elementor-widget-wpr-mega-menu) .wpr-menu-item{white-space:nowrap !important;}
 }
 </style>
+<style id="wpr-card-fix">.wpr-grid-item img,.woocommerce ul.products li.product img{height:230px!important;object-fit:cover!important;}</style>
 </head>
 <body class="archive post-type-archive post-type-archive-product wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-6 woocommerce woocommerce-page woocommerce-shop">
 <div data-elementor-type="wp-page" data-elementor-id="86" class="elementor elementor-86">
@@ -321,10 +323,11 @@ iframe, embed, object { max-width: 100% !important; }
 <h1 class="woocommerce-products-header__title page-title">Tienda</h1>
 <p class="woocommerce-shop-intro">Lleva la energía VOLT a donde vayas.</p>
 <ul class="products columns-4">
-<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/producto/volt-energy-pack-x6/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/0c4f9230-88d4-47c6-a477-9696fb398b57.png" alt="VOLT Energy Pack x6" /><h2 class="woocommerce-loop-product__title">VOLT Energy Pack x6</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$5.990</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
-<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/tropical-surge/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/sabor.png" alt="VOLT Tropical Surge" /><h2 class="woocommerce-loop-product__title">VOLT Tropical Surge</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
-<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/berry-rush/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/imapctt.png" alt="VOLT Berry Rush" /><h2 class="woocommerce-loop-product__title">VOLT Berry Rush</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
-<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/artic-blast/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/actitud.png" alt="VOLT Artic Blast" /><h2 class="woocommerce-loop-product__title">VOLT Artic Blast</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
+<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/producto/volt-energy-pack-x6/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/tienda-sixpack.jpg" alt="VOLT Energy Pack x6" /><h2 class="woocommerce-loop-product__title">VOLT Energy Pack x6</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$5.990</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
+<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/producto/volt-energy-pack-x6/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/tienda-original-clasico.jpg" alt="VOLT Energía Clásica" /><h2 class="woocommerce-loop-product__title">VOLT Energía Clásica</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
+<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/tropical-surge/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/tienda-tropical-surge.jpg" alt="VOLT Tropical Surge" /><h2 class="woocommerce-loop-product__title">VOLT Tropical Surge</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
+<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/berry-rush/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/tienda-berry.jpg" alt="VOLT Berry Rush" /><h2 class="woocommerce-loop-product__title">VOLT Berry Rush</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
+<li class="product type-product instock has-post-thumbnail"><a href="/bebida-energetica-continuacion/artic-blast/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link"><img class="wp-post-image" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/tienda-artic.jpg" alt="VOLT Artic Blast" /><h2 class="woocommerce-loop-product__title">VOLT Artic Blast</h2><span class="price"><span class="woocommerce-Price-amount amount"><bdi>$1.290</bdi></span></span></a><a href="?add-to-cart=300" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">Añadir al carrito</a></li>
 </ul>
 </div></div>
 </div>
