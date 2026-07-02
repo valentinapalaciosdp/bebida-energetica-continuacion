@@ -274,9 +274,10 @@ iframe, embed, object { max-width: 100% !important; }
 }
 		</style>
 <style id="wpr-page-css">
-.wpr-single-post,.wpr-blog-archive{background:#0b0b0b;padding:36px 0 70px;}
-.wpr-single-post .e-con-inner{max-width:820px;margin:0 auto;padding:0 22px;}
-.wpr-single-post .post-thumbnail img,.wpr-single-post .post-thumbnail{width:100%;height:auto;border-radius:12px;margin:26px 0 30px;display:block;}
+.wpr-single-post,.wpr-blog-archive{background:#0b0b0b;padding:36px 0 70px;display:block !important;width:100% !important;}
+.wpr-single-post .e-con-inner,.wpr-blog-archive .e-con-inner{display:block !important;max-width:820px;margin:0 auto;padding:0 22px;}
+.wpr-blog-archive .e-con-inner{max-width:1140px;}
+.wpr-single-post .post-thumbnail img{width:100%;height:auto;border-radius:12px;margin:26px 0 30px;display:block;max-height:520px;object-fit:cover;}
 .wpr-post-meta{color:#E8FF00;font:600 12px/1 "Inter",sans-serif;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
 .wpr-post-meta span+span:before{content:"\2022";margin:0 10px;color:#666;}
 .wpr-single-post .entry-title{color:#fff;font-size:44px;line-height:1.12;font-weight:800;margin:0 0 26px;}
@@ -285,20 +286,36 @@ iframe, embed, object { max-width: 100% !important; }
 .wpr-single-post .entry-content p{margin:0 0 20px;}
 .wpr-single-post .entry-content ul{margin:0 0 22px 24px;}
 .wpr-single-post .entry-content li{margin:9px 0;}
-.wpr-single-post .entry-content .wp-block-image img{width:100%;height:auto;border-radius:12px;margin:26px 0;}
+.wpr-single-post .entry-content .wp-block-image img{width:100%;height:auto;border-radius:12px;margin:26px 0;max-height:460px;object-fit:cover;}
 .wpr-single-post .entry-content blockquote{border-left:4px solid #E8FF00;padding:8px 0 8px 24px;margin:28px 0;color:#fff;font-style:italic;font-size:22px;}
-.wpr-blog-archive .e-con-inner{max-width:1140px;margin:0 auto;padding:0 22px;}
-.wpr-archive-title{color:#fff;font-size:48px;font-weight:800;text-align:center;margin:10px 0 40px;}
-.wpr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;}
+.wpr-archive-title{color:#fff;font-size:48px;font-weight:800;text-align:center;margin:10px 0 8px;}
+.wpr-archive-sub{color:#aaa;text-align:center;margin-bottom:40px;}
+.wpr-grid{display:grid !important;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px;}
 .wpr-grid-item{background:#141414;border:1px solid #222;border-radius:14px;overflow:hidden;transition:transform .2s,border-color .2s;}
 .wpr-grid-item:hover{transform:translateY(-4px);border-color:rgba(232,255,0,.4);}
-.wpr-grid-item img{width:100%;height:210px;object-fit:cover;display:block;}
+.wpr-grid-item img{width:100%;height:230px !important;object-fit:cover !important;display:block;}
 .wpr-grid-item-content{padding:22px;}
 .wpr-post-cat{color:#E8FF00;font:600 11px/1 "Inter",sans-serif;letter-spacing:2px;text-transform:uppercase;}
 .wpr-grid-item-content h2{margin:12px 0;font-size:22px;line-height:1.25;}
 .wpr-grid-item-content h2 a{color:#fff;text-decoration:none;}
 .wpr-grid-item-content p{color:#aaa;font-size:15px;line-height:1.7;margin:0 0 16px;}
 .wpr-read-more{color:#E8FF00;font-weight:700;text-decoration:none;font-size:14px;}
+</style>
+<style id="wpr-continuacion-fix">
+/* Contenedores custom a bloque (Elementor deja display:inline sin --display) */
+.wpr-single-post,.wpr-blog-archive,.wpr-single-post .e-con-inner,.wpr-blog-archive .e-con-inner{display:block !important;}
+.wpr-single-post,.wpr-blog-archive{width:100% !important;}
+.wpr-grid{display:grid !important;}
+.wpr-grid-item img,.woocommerce ul.products li.product img{height:230px !important;object-fit:cover !important;}
+/* Menu del header: fila flex, una sola linea centrada, no se parte (desktop) */
+@media(min-width:1025px){
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu){display:flex !important;flex-direction:row !important;align-items:center !important;justify-content:space-between !important;gap:20px;}
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu) .elementor-widget-wpr-mega-menu{flex:1 1 auto !important;width:auto !important;}
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu) .wpr-nav-menu-container.wpr-mega-menu-container{display:flex !important;justify-content:center !important;}
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu) ul.wpr-nav-menu.wpr-mega-menu{display:flex !important;flex-wrap:nowrap !important;justify-content:center !important;}
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu) ul.wpr-nav-menu.wpr-mega-menu > .menu-item{margin:0 8px !important;}
+.e-con.e-grid:has(.elementor-widget-wpr-mega-menu) .wpr-menu-item{white-space:nowrap !important;}
+}
 </style>
 </head>
 <body class="single single-post postid-200 wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-6">
@@ -330,27 +347,22 @@ iframe, embed, object { max-width: 100% !important; }
 <article id="post-200" class="post-200 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle">
 <div class="wpr-post-meta"><span>Lifestyle</span><span>1 de julio, 2026</span><span>Por Equipo VOLT</span></div>
 <h1 class="entry-title">5 hábitos para mantener tu energía todo el día</h1>
-<figure class="post-thumbnail wp-block-post-featured-image"><img fetchpriority="high" decoding="async" width="1200" height="900" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/actitud.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Persona con actitud energética VOLT" /></figure>
+<figure class="post-thumbnail wp-block-post-featured-image"><img fetchpriority="high" decoding="async" width="1200" height="800" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/actitud.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="5 hábitos para mantener tu energía todo el día" /></figure>
 <div class="entry-content">
-<p class="wp-block-paragraph">Mantener un buen nivel de energía durante toda la jornada no depende solo de lo que bebes: es la suma de pequeños hábitos que, repetidos día a día, marcan la diferencia entre llegar a la tarde agotado o rendir al máximo. En VOLT creemos que la energía real nace de la intensidad con la que vives cada momento. Aquí van cinco hábitos simples y respaldados por el sentido común para que tu ritmo no baje nunca.</p>
+<p class="wp-block-paragraph">Mantener un buen nivel de energía durante toda la jornada no depende solo de lo que bebes: es la suma de pequeños hábitos que, repetidos día a día, marcan la diferencia entre llegar a la tarde agotado o rendir al máximo. En VOLT creemos que la energía real nace de la intensidad con la que vives cada momento.</p>
 <h2 class="wp-block-heading">1. Hidrátate antes de tener sed</h2>
-<p class="wp-block-paragraph">La deshidratación leve es una de las causas más subestimadas del cansancio. Cuando el cuerpo pierde apenas un 2% de agua, la concentración cae y aparece esa sensación de pesadez. La recomendación es sencilla: bebe agua de forma constante y acompáñala con una fuente de energía inmediata cuando necesites ese impulso extra. No esperes a sentir sed; para entonces, tu rendimiento ya bajó.</p>
+<p class="wp-block-paragraph">La deshidratación leve es una de las causas más subestimadas del cansancio. Bebe agua de forma constante y acompáñala con una fuente de energía inmediata cuando necesites ese impulso extra. No esperes a sentir sed; para entonces tu rendimiento ya bajó.</p>
 <figure class="wp-block-image size-large"><img decoding="async" src="/bebida-energetica-continuacion/wp-content/uploads/2026/06/exp.png" alt="Explosión de energía VOLT" /></figure>
 <h2 class="wp-block-heading">2. Muévete cada 90 minutos</h2>
-<p class="wp-block-paragraph">Estar sentado muchas horas ralentiza la circulación y el estado de alerta. Un truco efectivo es levantarte y moverte al menos dos minutos cada hora y media: caminar, estirarte o subir una escalera. Ese micro-descanso reactiva el flujo sanguíneo y devuelve claridad mental casi de inmediato.</p>
-<ul class="wp-block-list">
-<li>Camina mientras hablas por teléfono.</li>
-<li>Haz estiramientos de cuello y hombros cada mañana.</li>
-<li>Usa las escaleras en lugar del ascensor cuando puedas.</li>
-</ul>
+<p class="wp-block-paragraph">Estar sentado muchas horas ralentiza la circulación y el estado de alerta. Levántate y muévete al menos dos minutos cada hora y media: caminar, estirarte o subir una escalera reactiva el flujo sanguíneo y devuelve claridad mental.</p>
+<ul class="wp-block-list"><li>Camina mientras hablas por teléfono.</li><li>Haz estiramientos de cuello y hombros cada mañana.</li><li>Usa las escaleras en lugar del ascensor.</li></ul>
 <h2 class="wp-block-heading">3. Cuida tus picos de azúcar</h2>
-<p class="wp-block-paragraph">Los alimentos ultraprocesados generan subidas rápidas de energía seguidas de caídas bruscas. Prioriza carbohidratos complejos, proteína y grasas saludables para mantener un nivel estable. Y cuando busques un empujón puntual, elige una opción con energía inmediata pero controlada, para no terminar en la temida "bajada de las tres de la tarde".</p>
+<p class="wp-block-paragraph">Los alimentos ultraprocesados generan subidas rápidas seguidas de caídas bruscas. Prioriza carbohidratos complejos, proteína y grasas saludables para mantener un nivel estable de energía.</p>
 <blockquote class="wp-block-quote"><p>La energía no se trata de forzar el cuerpo, sino de darle constancia y buenos hábitos.</p></blockquote>
 <h2 class="wp-block-heading">4. Respeta tu descanso</h2>
-<p class="wp-block-paragraph">Ningún hábito compensa la falta de sueño. Dormir entre siete y ocho horas permite que el cuerpo recupere y consolide lo aprendido durante el día. Establece un horario fijo, reduce las pantallas una hora antes de dormir y crea un ambiente oscuro y fresco. Un descanso de calidad es el multiplicador de todo lo demás.</p>
+<p class="wp-block-paragraph">Ningún hábito compensa la falta de sueño. Dormir entre siete y ocho horas permite que el cuerpo recupere. Un descanso de calidad es el multiplicador de todo lo demás.</p>
 <h2 class="wp-block-heading">5. Empieza con una intención clara</h2>
-<p class="wp-block-paragraph">La energía también es mental. Comenzar el día definiendo una meta concreta enfoca tu atención y evita la dispersión que agota. Escribe tus tres prioridades del día y celebra cada avance. Cuando sabes hacia dónde vas, cada acción suma y el cansancio pesa menos.</p>
-<p class="wp-block-paragraph">Adopta estos cinco hábitos y notarás la diferencia en pocas semanas. Y recuerda: cuando necesites ese impulso final, VOLT está pensado justamente para acompañar el ritmo de quienes viven en movimiento. <strong>Energía clásica, intensidad real.</strong></p>
+<p class="wp-block-paragraph">Comenzar el día definiendo una meta concreta enfoca tu atención y evita la dispersión que agota. Y recuerda: cuando necesites ese impulso final, VOLT acompaña el ritmo de quienes viven en movimiento. <strong>Energía clásica, intensidad real.</strong></p>
 </div>
 </article>
 </div>
@@ -420,13 +432,5 @@ var WprConfig = {"ajaxurl":"/wp-admin/admin-ajax.php","resturl":"/wp-json/wpradd
 </script>
 <script id="wpr-addons-js-js" data-cfasync="false" src="/bebida-energetica-continuacion/wp-content/plugins/royal-elementor-addons/assets/js/frontend.min.js?ver=1.7.1063"></script>
 <script id="wpr-modal-popups-js-js" src="/bebida-energetica-continuacion/wp-content/plugins/royal-elementor-addons/assets/js/modal-popups.min.js?ver=1.7.1063"></script>
-<script id="wp-emoji-settings" type="application/json">
-{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"/bebida-energetica-continuacion/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
-</script>
-<script type="module">
-/*! This file is auto-generated */
-const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
-//# sourceURL=/bebida-energetica-continuacion/wp-includes/js/wp-emoji-loader.min.js
-</script>
 	</body>
 </html>
